@@ -22,9 +22,12 @@ async function getUser(email){
  document.getElementById("bio").innerHTML = userData.bio;
  //twitter
  document.getElementById("twitter").innerHTML = userData.twitter_username;
+ //avatar
+ document.getElementById("avatar").src = userData.avatar_url;
   //date joined
   let date = new Date(userData.created_at).toDateString()
  document.getElementById("date").innerHTML = `Joined ${date}`
 }
+
 
 getUser('kensparks-dev')
