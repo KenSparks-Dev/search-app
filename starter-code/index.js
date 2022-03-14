@@ -4,7 +4,7 @@
 // }).console.log('ERROR')
 
 async function getUser(email){
-  let userData = await fetch(`https://api.github.com/users/${email}`).then(res => res.json())
+  let userData = await (await fetch(`https://api.github.com/users/${email}`)).json()
   console.log(userData)
   //name
   document.getElementById("name").innerHTML = userData.login;
