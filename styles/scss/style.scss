@@ -1,0 +1,127 @@
+@import 'global';
+@import 'typography';
+@import 'colors';
+/* site styles */
+
+.search-app {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 700px;
+}
+.header {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+
+	&__title {
+		@include h4;
+		@include a;
+	}
+	&__btn {
+		background: transparent;
+		border: none;
+		color: $white;
+		display: flex;
+	}
+	&__btn img {
+		padding-left: 10px;
+	}
+}
+// Search Section
+.search-section {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 35px 2fr 1fr;
+	background: $midnight-express;
+	padding: 10px 10px;
+	border-radius: 10px;
+	&__icon {
+		padding: 5px 7px 5px 0px;
+		display: flex;
+		align-self: center;
+	}
+	&__input {
+		background-color: transparent;
+		border: none;
+		@include body-reg;
+	}
+	&__input::placeholder {
+		background-color: transparent;
+		border: none;
+		color: $white;
+	}
+	&__btn {
+		background: $dodger-blue;
+		color: $white;
+		border: none;
+		padding: 15px 0;
+		border-radius: 10px;
+	}
+}
+
+// user section
+.user {
+	background: $midnight-express;
+	margin: 25px 0 60px 0;
+	padding: 40px 20px;
+	border-radius: 10px;
+}
+
+//Bio Section
+.bio-section{
+	&__bio{
+		padding-top: 25px;
+}	
+}
+.bio-section-avatar {
+	display: flex;
+	justify-content: space-between;
+	&__img {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&__text {
+		padding-top: 10px;
+	}
+	&__text-name {
+		@include body-reg;
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+	&__text-date {
+		@include body-reg;
+	}
+	&__text-handle{
+		color: $dodger-blue;
+	}
+}
+
+.statistics{
+	background: #141d2f;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	&__title{
+		@include body-reg;
+		font-weight: 400;
+	}
+}
+
+.number{
+	font-weight: bold;
+}
+
+.contact-section{
+	margin-top: 20px;
+	&__list{
+	}
+	&__list-item{
+		padding-top: 15px;
+	}
+}

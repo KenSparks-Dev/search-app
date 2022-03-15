@@ -1,19 +1,17 @@
-// fetch('https://api.github.com/users/kensparks-dev').then(res => console.log(res)).then(data => {
-//   // document.getElementById('name').innerHTML = data.name
-//   console.log(data)
-// }).console.log('ERROR')
-
 async function getUser(email){
-  let userData = await (await fetch(`https://api.github.com/users/${email}`)).json()
+  let response = await fetch(`https://api.github.com/users/${email}`)
+  let userData = await response.json()
   console.log(userData)
   //name
-  document.getElementById("name").innerHTML = userData.login;
+  document.getElementById("name").innerHTML = userData.login
+  //handle
+  document.getElementById("handle").innerHTML = `<span>@</span>${userData.login}`
  //public repos
- document.getElementById("repos").innerHTML = userData.public_repos;
+ document.getElementById("repos").innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}`;
  //followers
- document.getElementById("followers").innerHTML = userData.followers;
+ document.getElementById("followers").innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`;
  //following
- document.getElementById("following").innerHTML = userData.following;
+ document.getElementById("following").innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`;
  //location
  document.getElementById("location").innerHTML = userData.location;
  //blog
@@ -30,4 +28,4 @@ async function getUser(email){
 }
 
 
-getUser('kensparks-dev')
+getUser('max')
