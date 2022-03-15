@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #141D2F;
+  background: #141d2f;
   color: #ffffff;
   font-family: "Space Mono", monospace;
   width: 100%;
@@ -12,6 +12,7 @@ body {
 
 button {
   font-family: "Space Mono", monospace;
+  cursor: pointer;
 }
 
 ul li {
@@ -49,16 +50,22 @@ a {
   border: none;
   color: #ffffff;
   display: flex;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 .header__btn img {
   padding-left: 10px;
+}
+.header .dark-mode {
+  display: none;
 }
 
 .search-section {
   margin-top: 30px;
   display: grid;
   grid-template-columns: 35px 2fr 1fr;
-  background: #1E2A47;
+  background: #1e2a47;
   padding: 10px 10px;
   border-radius: 10px;
 }
@@ -80,15 +87,18 @@ a {
   color: #ffffff;
 }
 .search-section__btn {
-  background: #0079FF;
+  background: #0079ff;
   color: #ffffff;
   border: none;
   padding: 15px 0;
   border-radius: 10px;
 }
+.search-section .light-mode-placeholder::placeholder {
+  color: black;
+}
 
 .user {
-  background: #1E2A47;
+  background: #1e2a47;
   margin: 25px 0 60px 0;
   padding: 40px 20px;
   border-radius: 10px;
@@ -123,7 +133,7 @@ a {
   line-height: 25px;
 }
 .bio-section-avatar__text-handle {
-  color: #0079FF;
+  color: #0079ff;
 }
 
 .statistics {

@@ -13,19 +13,20 @@
 <body>
   <div class="search-app">
     <header class="header">
-      <a class="header__title" href="index.html">
+      <a id="header-title" class="header__title" href="index.html">
         <h1>
           devfinder
         </h1>
       </a> 
-      <button class="header__btn" id="header-btn">Light<span><img src="./assets/icon-sun.svg" alt=""></span></button>
+      <button class="header__btn light-mode" id="lightswitch">Light<span><img src="./assets/icon-sun.svg" alt=""></span></button>
+      <button class="header__btn dark-mode" id="darkswitch">Dark<span><img src="./assets/icon-moon.svg" alt=""></span></button>
     </header>
-    <div class="search-section">
+    <div class="search-section" id="search-section">
       <img class="search-section__icon" src="./assets/icon-search.svg" alt="">
       <input type="search" class="search-section__input" name="search" id="search" placeholder="Search GitHub username...">
       <button class="search-section__btn">Search</button>
     </div>
-    <div class="user">
+    <div class="user" id="user">
       <div class="bio-section">
         <div class="bio-section-avatar">
           <img class="bio-section-avatar__img" src="" alt="user photo" id="avatar">
@@ -37,32 +38,32 @@
         </div>
         <p class="bio-section__bio" id="bio">The profile has no bio</p>
       </div>
-      <div class="statistics">
+      <div class="statistics" id="statistics">
         <p class="repos number" id="repos"></p>
         <p class="followers number" id="followers"></p>
         <p class="following number" id="following"></p>
       </div>
-      <div class="contact-section">
+      <div class="contact-section" id="contact-section">
         <ul class="contact-section__list">
           <li class="contact-section__list-item">
               <img src="./assets/icon-location.svg" alt=""/>
               <span class="location" id="location">Not Available</span>
           </li>
           <li class="contact-section__list-item">
-            <a href="">
+            <a href="" class="contact-link">
               <img src="./assets/icon-website.svg" alt=""/>
               <span class="blog" id="blog">Not Available</span>
 
             </a>
           </li>
           <li class="contact-section__list-item">
-            <a href="">
+            <a href="" class="contact-link">
               <img src="./assets/icon-twitter.svg" alt=""/>
               <span class="twitter" id="twitter">Not Available</span>
             </a>
           </li>
           <li class="contact-section__list-item">
-            <a href="">
+            <a href="" class="contact-link">
               <img src="./assets/icon-company.svg" alt=""/>
               <span class="company" id="company">Not available</span>
             </a>
