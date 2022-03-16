@@ -1,38 +1,51 @@
-async function getUser(email) {
-	let response = await fetch(`https://api.github.com/users/${email}`);
+async function getUser(userName) {
+	let response = await fetch(`https://api.github.com/users/${userName}`);
 	let userData = await response.json();
+	console.log(userData)
 	//name
-	document.getElementById('name').innerHTML = userData.login;
+	let name = (userData.login == null ? document.getElementById('name').innerHTML = 'User Name' : document.getElementById('name').innerHTML = userData.login);
+
 	//handle
-	document.getElementById('handle').innerHTML = `<span>@</span>${userData.login}`;
-	//public repos
-	document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}`;
-	//followers
-	document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`;
-	//following
-	document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`;
-	//location
-	document.getElementById('location').innerHTML = userData.location;
-	//blog
-	document.getElementById('blog').innerHTML = userData.blog;
-	//bio
-	document.getElementById('bio').innerHTML = userData.bio;
-	//twitter
-	document.getElementById('twitter').innerHTML = userData.twitter_username;
-	//avatar
-	document.getElementById('avatar').src = userData.avatar_url;
+	let handle = (userData.login == null ? document.getElementById('handle').innerHTML = '@handle' : document.getElementById('handle').innerHTML = userData.login);
+
 	//date joined
-	let date = new Date(userData.created_at).toDateString();
-	document.getElementById('date').innerHTML = `Joined ${date}`;
+	let joinDate = new Date(userData.created_at).toDateString();
+	let date = (userData.created_at == null ? document.getElementById('date').innerHTML = 'Date Joined ' : document.getElementById('date').innerHTML = `Joined ${joinDate}`);
+
+	//public repos
+	let repos = (userData.public_repos == undefined ? document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> 0` : document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}` );
+
+	//followers
+	let followers = (userData.followers == null ? document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> 0` : document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`);
+
+	//following
+	let following = (userData.following == null ? document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> 0` : document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`);
+
+	//location
+	let location = (document.getElementById('location').innerHTML = userData.location == null ? 'Location Unknown' : document.getElementById('location').innerHTML = userData.location);
+
+	//blog
+	let blog = (userData.blog == null ? document.getElementById('blog').innerHTML = 'Blog' : document.getElementById('blog').innerHTML = userData.blog);
+
+	//bio
+	let bio = (userData.bio == null ? document.getElementById('bio').innerHTML = 'Bio' : document.getElementById('bio').innerHTML = userData.bio);
+
+	//twitter
+	let twitter = (userData.twitter_username == null ? document.getElementById('twitter').innerHTML = 'Twitter Handle' : document.getElementById('twitter').innerHTML = userData.twitter_username);
+
+	//avatar
+	let avatar =(document.getElementById('avatar').src = userData.avatar_url == null ? document.getElementById('avatar').src = `./assets/avatar.jpeg` : document.getElementById('avatar').src = userData.avatar_url);
 }
 
+
+let inputValue = document.getElementById('search').value;
 getUser('kensparks-dev');
 
 // LightMode / DarkMode
 
 //General Colors
 const white = '#ffffff';
-const black = '#000000'
+const black = '#000000';
 const dodgerBlue = ' #0079FF';
 // Light Mode Colors
 const slateGray = '#697c9a';
@@ -74,22 +87,22 @@ function lightModeSwitch() {
 	user.style.background = whiteTwo;
 	userName.style.color = midnightExpressDark;
 	dateText.style.color = licorice;
-  bio.style.color = licorice;
+	bio.style.color = licorice;
 	searchSection.style.background = whiteTwo;
 	statistics.style.background = ghostWhite;
-  // input.classList.add('light-mode-placeholder::placeholder');
+	// input.classList.add('light-mode-placeholder::placeholder');
 	for (pTag of pTags) {
 		pTag.style.color = sanMarino;
 	}
 	for (liTag of liTags) {
 		liTag.style.color = sanMarino;
 	}
-  for (liLink of liLinks) {
+	for (liLink of liLinks) {
 		liLink.style.color = sanMarino;
 	}
-  repos.style.color = '#000';
-  followers.style.color = '#000'
-  following.style.color = '#000'
+	repos.style.color = '#000';
+	followers.style.color = '#000';
+	following.style.color = '#000';
 }
 
 function darkModeSwitch() {
@@ -100,17 +113,16 @@ function darkModeSwitch() {
 	user.style.background = midnightExpress;
 	userName.style.color = white;
 	dateText.style.color = white;
-  bio.style.color = white;
+	bio.style.color = white;
 	searchSection.style.background = midnightExpress;
 	statistics.style.background = midnightExpressDark;
 	for (pTag of pTags) {
-    pTag.style.color = white;
+		pTag.style.color = white;
 	}
 	for (liTag of liTags) {
-    liTag.style.color = white;
+		liTag.style.color = white;
 	}
-  for (liLink of liLinks) {
-    liLink.style.color = white;
+	for (liLink of liLinks) {
+		liLink.style.color = white;
 	}
- 
 }

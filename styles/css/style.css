@@ -80,10 +80,17 @@ a {
   font-weight: 400;
   font-size: 15px;
   line-height: 25px;
+  color: #ffffff;
+}
+.search-section input:focus, .search-section textarea:focus, .search-section select:focus {
+  outline: none;
 }
 .search-section__input::placeholder {
   background-color: transparent;
   border: none;
+  color: #ffffff;
+}
+.search-section textarea {
   color: #ffffff;
 }
 .search-section__btn {
@@ -110,7 +117,6 @@ a {
 
 .bio-section-avatar {
   display: flex;
-  justify-content: space-between;
 }
 .bio-section-avatar__img {
   width: 80px;
@@ -119,6 +125,7 @@ a {
 }
 .bio-section-avatar__text {
   padding-top: 10px;
+  padding-left: 20px;
 }
 .bio-section-avatar__text-name {
   font-weight: 400;
