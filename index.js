@@ -1,30 +1,33 @@
 async function getUser(userName) {
 	let response = await fetch(`https://api.github.com/users/${userName}`);
 	let userData = await response.json();
+	console.log(userData)
 	//name
-	document.getElementById('name').innerHTML = userData.login;
+	let name = (userData.login == null ? 'User Name' : document.getElementById('name').innerHTML = userData.login);
 	//handle
-	document.getElementById('handle').innerHTML = `<span>@</span>${userData.login}`;
+	let handle = (userData.login == null ? '@handle' : document.getElementById('handle').innerHTML = userData.login);
+	//date joined
+	let joinDate = new Date(userData.created_at).toDateString();
+	let date = (joinDate == null ? 'Joined Date' : document.getElementById('date').innerHTML = `Joined ${joinDate}`);
 	//public repos
-	document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}`;
+	let repos = (userData.public_repos == undefined ? `<p class="statistics__title">Repos</p> 0` : document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}` );
 	//followers
 	document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`;
 	//following
 	document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`;
 	//location
-	document.getElementById('location').innerHTML = userData.location;
+	let location = (document.getElementById('location').innerHTML = userData.location == null ? 'Location Unknown' : document.getElementById('location').innerHTML = userData.location);
+	
 	//blog
-	document.getElementById('blog').innerHTML = userData.blog;
+	let blog = (userData.blog == null ? 'Blog' : document.getElementById('blog').innerHTML = userData.blog);
 	//bio
-	document.getElementById('bio').innerHTML = userData.bio;
+	let bio = (userData.bio == null ? 'Bio' : document.getElementById('bio').innerHTML = userData.bio);
 	//twitter
-	document.getElementById('twitter').innerHTML = userData.twitter_username;
+	let twitter = (userData.userName == null ? 'Unavailable' : document.getElementById('twitter').innerHTML = userData.twitter_username);
 	//avatar
-	document.getElementById('avatar').src = userData.avatar_url;
-	//date joined
-	let date = new Date(userData.created_at).toDateString();
-	document.getElementById('date').innerHTML = `Joined ${date}`;
+	let avatar =(userData.userName == null ? `<img class="bio-section-avatar__img" src="./assets/avatar.jpeg" alt="user photo" id="avatar">` : document.getElementById('avatar').src = userData.avatar_url);
 }
+
 
 let inputValue = document.getElementById('search').value;
 getUser();
