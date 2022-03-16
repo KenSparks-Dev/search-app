@@ -40,14 +40,14 @@ async function getUser(userName) {
 	let company = (userData.company == null ? document.getElementById('company').innerHTML = 'Not Available' : document.getElementById('company').innerHTML = userData.company);
 
 	// let companyLink = (userData.company == null || !userData.company.includes('.com', '.org', '.io', '.net') ? document.getElementById('company-link').href = '#' : document.getElementById('company-link').href = userData.company);
-	
+
 	//avatar
 	let avatar =(document.getElementById('avatar').src = userData.avatar_url == null ? document.getElementById('avatar').src = `./assets/avatar.jpeg` : document.getElementById('avatar').src = userData.avatar_url);
 }
 
 
 let inputValue = document.getElementById('search').value;
-getUser('kensparks-dev');
+getUser();
 
 // LightMode / DarkMode
 
