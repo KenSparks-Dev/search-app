@@ -29,14 +29,18 @@ async function getUser(userName) {
 	//blog
 	let blog = (userData.blog == null ? document.getElementById('blog').innerHTML = 'Blog' : document.getElementById('blog').innerHTML = userData.blog);
 
-	let blogLink = (userData.blog == null ? document.getElementById('blog-link').innerHTML = '#' : document.getElementById('blog-link').href = userData.blog);
+	let blogLink = (userData.blog == null ? document.getElementById('blog-link').href = '#' : document.getElementById('blog-link').href = userData.blog);
 	console.log(blogLink)
 	//bio
 	let bio = (userData.bio == null ? document.getElementById('bio').innerHTML = 'Bio' : document.getElementById('bio').innerHTML = userData.bio);
 
 	//twitter
-	let twitter = (userData.twitter_username == null ? document.getElementById('twitter').innerHTML = 'Twitter Handle' : document.getElementById('twitter').innerHTML = userData.twitter_username);
+	let twitter = (userData.twitter_username == null ? document.getElementById('twitter').innerHTML = 'Not Available' : document.getElementById('twitter').innerHTML = userData.twitter_username);
+	//company
+	let company = (userData.company == null ? document.getElementById('company').innerHTML = 'Not Available' : document.getElementById('company').innerHTML = userData.company);
 
+	// let companyLink = (userData.company == null || !userData.company.includes('.com', '.org', '.io', '.net') ? document.getElementById('company-link').href = '#' : document.getElementById('company-link').href = userData.company);
+	
 	//avatar
 	let avatar =(document.getElementById('avatar').src = userData.avatar_url == null ? document.getElementById('avatar').src = `./assets/avatar.jpeg` : document.getElementById('avatar').src = userData.avatar_url);
 }

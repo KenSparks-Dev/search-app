@@ -100,7 +100,9 @@ input[type=search]::-webkit-search-results-decoration {
 .search-section__input::placeholder {
   color: #ffffff;
 }
-.search-section input:focus, .search-section textarea:focus, .search-section select:focus {
+.search-section input:focus,
+.search-section textarea:focus,
+.search-section select:focus {
   outline: none;
 }
 .search-section__btn {
@@ -109,6 +111,7 @@ input[type=search]::-webkit-search-results-decoration {
   border: none;
   padding: 15px 0;
   border-radius: 10px;
+  font-size: 18px;
 }
 
 .user {

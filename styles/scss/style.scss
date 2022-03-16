@@ -31,7 +31,7 @@
 	&__btn img {
 		padding-left: 10px;
 	}
-	.dark-mode{
+	.dark-mode {
 		display: none;
 	}
 }
@@ -48,13 +48,13 @@
 		display: flex;
 		align-self: center;
 	}
-	&__input-light{
+	&__input-light {
 		background-color: transparent;
 		border: none;
 		color: $white;
 	}
-	&__input-light::placeholder{
-		color:black;
+	&__input-light::placeholder {
+		color: black;
 	}
 	&__input {
 		background-color: transparent;
@@ -63,12 +63,12 @@
 		color: $white;
 	}
 	&__input::placeholder {
-		// background-color: transparent;
-		// border: none;
 		color: $white;
 	}
-	input:focus, textarea:focus, select:focus{
-		outline:none;
+	input:focus,
+	textarea:focus,
+	select:focus {
+		outline: none;
 	}
 
 	&__btn {
@@ -77,6 +77,7 @@
 		border: none;
 		padding: 15px 0;
 		border-radius: 10px;
+		font-size: 18px;
 	}
 }
 
@@ -89,10 +90,10 @@
 }
 
 //Bio Section
-.bio-section{
-	&__bio{
+.bio-section {
+	&__bio {
 		padding-top: 25px;
-}	
+	}
 }
 .bio-section-avatar {
 	display: flex;
@@ -113,12 +114,12 @@
 	&__text-date {
 		@include body-reg;
 	}
-	&__text-handle{
+	&__text-handle {
 		color: $dodger-blue;
 	}
 }
 
-.statistics{
+.statistics {
 	background: #141d2f;
 	margin-top: 20px;
 	display: flex;
@@ -126,21 +127,21 @@
 	padding: 20px;
 	border-radius: 10px;
 	text-align: center;
-	&__title{
+	&__title {
 		@include body-reg;
 		font-weight: 400;
 	}
 }
 
-.number{
+.number {
 	font-weight: bold;
 }
 
-.contact-section{
+.contact-section {
 	margin-top: 20px;
-	&__list{
+	&__list {
 	}
-	&__list-item{
+	&__list-item {
 		padding-top: 15px;
 	}
 }
