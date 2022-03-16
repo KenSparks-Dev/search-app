@@ -24,12 +24,12 @@
     <div class="search-section" id="search-section">
       <img class="search-section__icon" src="./assets/icon-search.svg" alt="">
       <input type="search" class="search-section__input" name="search" id="search" placeholder="Search GitHub username...">
-      <button class="search-section__btn">Search</button>
+      <button class="search-section__btn" onclick="getUser(document.getElementById('search').value)">Search</button>
     </div>
     <div class="user" id="user">
       <div class="bio-section">
         <div class="bio-section-avatar">
-          <img class="bio-section-avatar__img" src="" alt="user photo" id="avatar">
+          <img class="bio-section-avatar__img" src="./assets/avatar.jpeg" alt="user photo" id="avatar">
           <div class="bio-section-avatar__text">
             <h2 class="bio-section-avatar__text-name" id="name">User Name</h2>
             <a href="" class="bio-section-avatar__text-handle" id="handle">@User Name</a>

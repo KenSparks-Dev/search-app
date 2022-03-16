@@ -1,5 +1,5 @@
-async function getUser(email) {
-	let response = await fetch(`https://api.github.com/users/${email}`);
+async function getUser(userName) {
+	let response = await fetch(`https://api.github.com/users/${userName}`);
 	let userData = await response.json();
 	//name
 	document.getElementById('name').innerHTML = userData.login;
@@ -26,13 +26,14 @@ async function getUser(email) {
 	document.getElementById('date').innerHTML = `Joined ${date}`;
 }
 
-getUser('kensparks-dev');
+let inputValue = document.getElementById('search').value;
+getUser();
 
 // LightMode / DarkMode
 
 //General Colors
 const white = '#ffffff';
-const black = '#000000'
+const black = '#000000';
 const dodgerBlue = ' #0079FF';
 // Light Mode Colors
 const slateGray = '#697c9a';
@@ -74,22 +75,22 @@ function lightModeSwitch() {
 	user.style.background = whiteTwo;
 	userName.style.color = midnightExpressDark;
 	dateText.style.color = licorice;
-  bio.style.color = licorice;
+	bio.style.color = licorice;
 	searchSection.style.background = whiteTwo;
 	statistics.style.background = ghostWhite;
-  // input.classList.add('light-mode-placeholder::placeholder');
+	// input.classList.add('light-mode-placeholder::placeholder');
 	for (pTag of pTags) {
 		pTag.style.color = sanMarino;
 	}
 	for (liTag of liTags) {
 		liTag.style.color = sanMarino;
 	}
-  for (liLink of liLinks) {
+	for (liLink of liLinks) {
 		liLink.style.color = sanMarino;
 	}
-  repos.style.color = '#000';
-  followers.style.color = '#000'
-  following.style.color = '#000'
+	repos.style.color = '#000';
+	followers.style.color = '#000';
+	following.style.color = '#000';
 }
 
 function darkModeSwitch() {
@@ -100,17 +101,16 @@ function darkModeSwitch() {
 	user.style.background = midnightExpress;
 	userName.style.color = white;
 	dateText.style.color = white;
-  bio.style.color = white;
+	bio.style.color = white;
 	searchSection.style.background = midnightExpress;
 	statistics.style.background = midnightExpressDark;
 	for (pTag of pTags) {
-    pTag.style.color = white;
+		pTag.style.color = white;
 	}
 	for (liTag of liTags) {
-    liTag.style.color = white;
+		liTag.style.color = white;
 	}
-  for (liLink of liLinks) {
-    liLink.style.color = white;
+	for (liLink of liLinks) {
+		liLink.style.color = white;
 	}
- 
 }

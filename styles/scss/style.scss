@@ -52,10 +52,19 @@
 		background-color: transparent;
 		border: none;
 		@include body-reg;
+		color: $white;
 	}
+	input:focus, textarea:focus, select:focus{
+		outline:none;
+	}
+
 	&__input::placeholder {
 		background-color: transparent;
 		border: none;
+		color: $white;
+	}
+
+	textarea{
 		color: $white;
 	}
 	&__btn {

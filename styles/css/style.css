@@ -80,10 +80,17 @@ a {
   font-weight: 400;
   font-size: 15px;
   line-height: 25px;
+  color: #ffffff;
+}
+.search-section input:focus, .search-section textarea:focus, .search-section select:focus {
+  outline: none;
 }
 .search-section__input::placeholder {
   background-color: transparent;
   border: none;
+  color: #ffffff;
+}
+.search-section textarea {
   color: #ffffff;
 }
 .search-section__btn {
