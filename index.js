@@ -3,17 +3,19 @@ async function getUser(userName) {
 	let userData = await response.json();
 	console.log(userData)
 	//name
-	let name = (userData.login == null ? document.getElementById('name').innerHTML = 'User Name' : document.getElementById('name').innerHTML = userData.login);
+	let name = (userData.name == null ? document.getElementById('name').innerHTML = 'User Name' : document.getElementById('name').innerHTML = userData.name);
 
 	//handle
 	let handle = (userData.login == null ? document.getElementById('handle').innerHTML = '@handle' : document.getElementById('handle').innerHTML = userData.login);
+
+	let handleLink = (userData.html_url == null ? document.getElementById('handle').href = '#' : document.getElementById('handle').href = userData.html_url);
 
 	//date joined
 	let joinDate = new Date(userData.created_at).toDateString();
 	let date = (userData.created_at == null ? document.getElementById('date').innerHTML = 'Date Joined ' : document.getElementById('date').innerHTML = `Joined ${joinDate}`);
 
 	//public repos
-	let repos = (userData.public_repos == undefined ? document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> 0` : document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}` );
+	let repos = (userData.public_repos == null ? document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> 0` : document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}` );
 
 	//followers
 	let followers = (userData.followers == null ? document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> 0` : document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`);
@@ -27,6 +29,8 @@ async function getUser(userName) {
 	//blog
 	let blog = (userData.blog == null ? document.getElementById('blog').innerHTML = 'Blog' : document.getElementById('blog').innerHTML = userData.blog);
 
+	let blogLink = (userData.blog == null ? document.getElementById('blog-link').innerHTML = '#' : document.getElementById('blog-link').href = userData.blog);
+	console.log(blogLink)
 	//bio
 	let bio = (userData.bio == null ? document.getElementById('bio').innerHTML = 'Bio' : document.getElementById('bio').innerHTML = userData.bio);
 
