@@ -64,7 +64,7 @@ let pTags = document.getElementsByTagName('p');
 let liTags = document.getElementsByTagName('li');
 let headerTitle = document.getElementById('header-title');
 let searchSection = document.getElementById('search-section');
-let input = document.getElementsByTagName('input');
+let input = document.getElementById('search');
 let user = document.getElementById('user');
 let userName = document.getElementById('name');
 let statistics = document.getElementById('statistics');
@@ -90,7 +90,9 @@ function lightModeSwitch() {
 	bio.style.color = licorice;
 	searchSection.style.background = whiteTwo;
 	statistics.style.background = ghostWhite;
-	// input.classList.add('light-mode-placeholder::placeholder');
+	input.style.color = black;
+	input.classList.remove('search-section__input');
+	input.classList.add('search-section__input-light');
 	for (pTag of pTags) {
 		pTag.style.color = sanMarino;
 	}
@@ -116,6 +118,9 @@ function darkModeSwitch() {
 	bio.style.color = white;
 	searchSection.style.background = midnightExpress;
 	statistics.style.background = midnightExpressDark;
+	input.style.color = white;
+	input.classList.remove('search-section__input-light');
+	input.classList.add('search-section__input');
 	for (pTag of pTags) {
 		pTag.style.color = white;
 	}

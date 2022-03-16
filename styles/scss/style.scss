@@ -48,34 +48,35 @@
 		display: flex;
 		align-self: center;
 	}
+	&__input-light{
+		background-color: transparent;
+		border: none;
+		color: $white;
+	}
+	&__input-light::placeholder{
+		color:black;
+	}
 	&__input {
 		background-color: transparent;
 		border: none;
 		@include body-reg;
 		color: $white;
 	}
+	&__input::placeholder {
+		// background-color: transparent;
+		// border: none;
+		color: $white;
+	}
 	input:focus, textarea:focus, select:focus{
 		outline:none;
 	}
 
-	&__input::placeholder {
-		background-color: transparent;
-		border: none;
-		color: $white;
-	}
-
-	textarea{
-		color: $white;
-	}
 	&__btn {
 		background: $dodger-blue;
 		color: $white;
 		border: none;
 		padding: 15px 0;
 		border-radius: 10px;
-	}
-	.light-mode-placeholder::placeholder{
-		color:black;
 	}
 }
 
