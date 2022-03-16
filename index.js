@@ -27,7 +27,7 @@ async function getUser(userName) {
 	let location = (document.getElementById('location').innerHTML = userData.location == null ? 'Location Unknown' : document.getElementById('location').innerHTML = userData.location);
 
 	//blog
-	let blog = (userData.blog == null || '""' ? document.getElementById('blog').innerHTML = 'Not Available' : document.getElementById('blog').innerHTML = userData.blog);
+	let blog = (userData.blog == null || `""` ? document.getElementById('blog').innerHTML = 'Not Available' : document.getElementById('blog').innerHTML = userData.blog);
 
 	let blogLink = (userData.blog == null ? document.getElementById('blog-link').href = '#' : document.getElementById('blog-link').href = userData.blog);
 	console.log(blogLink)
