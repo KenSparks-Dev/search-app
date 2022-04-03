@@ -7,17 +7,29 @@ async function getUser(userName) {
 		userData.name == null
 			? (document.getElementById('name').innerHTML = 'User Name')
 			: (document.getElementById('name').innerHTML = userData.name);
-
+	let nameMobile =
+		userData.name == null
+			? (document.getElementById('name-mobile').innerHTML = 'User Name')
+			: (document.getElementById('name-mobile').innerHTML = userData.name);
 	//handle
 	let handle =
 		userData.login == null
 			? (document.getElementById('handle').innerHTML = '@handle')
 			: (document.getElementById('handle').innerHTML = userData.login);
 
+	let handleMobile =
+		userData.login == null
+			? (document.getElementById('handle-mobile').innerHTML = '@handle')
+			: (document.getElementById('handle-mobile').innerHTML = userData.login);
+
 	let handleLink =
 		userData.html_url == null
 			? (document.getElementById('handle').href = '#')
 			: (document.getElementById('handle').href = userData.html_url);
+	let handleLinkMobile =
+		userData.html_url == null
+			? (document.getElementById('handle-mobile').href = '#')
+			: (document.getElementById('handle-mobile').href = userData.html_url);
 
 	//date joined
 	let joinDate = new Date(userData.created_at).toDateString();
@@ -25,6 +37,11 @@ async function getUser(userName) {
 		userData.created_at == null
 			? (document.getElementById('date').innerHTML = 'Date Joined ')
 			: (document.getElementById('date').innerHTML = `Joined ${joinDate}`);
+
+			let dateMobile =
+			userData.created_at == null
+				? (document.getElementById('date-mobile').innerHTML = 'Date Joined ')
+				: (document.getElementById('date-mobile').innerHTML = `Joined ${joinDate}`);
 
 	//public repos
 	let repos =
@@ -91,6 +108,12 @@ async function getUser(userName) {
 		userData.avatar_url == null
 			? (document.getElementById('avatar').src = `./assets/avatar.jpeg`)
 			: (document.getElementById('avatar').src = userData.avatar_url));
+
+	//avatar
+	let avatarMobile = (document.getElementById('avatar-mobile').src =
+		userData.avatar_url == null
+			? (document.getElementById('avatar-mobile').src = `./assets/avatar.jpeg`)
+			: (document.getElementById('avatar-mobile').src = userData.avatar_url));
 }
 
 getUser();
