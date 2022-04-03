@@ -229,6 +229,7 @@
 	.bio-section-avatar__text-full-screen {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
 	}
 
 	.contact-section__list {
