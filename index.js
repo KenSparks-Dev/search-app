@@ -1,52 +1,98 @@
 async function getUser(userName) {
 	let response = await fetch(`https://api.github.com/users/${userName}`);
 	let userData = await response.json();
-	console.log(userData)
+	console.log(userData);
 	//name
-	let name = (userData.name == null ? document.getElementById('name').innerHTML = 'User Name' : document.getElementById('name').innerHTML = userData.name);
+	let name =
+		userData.name == null
+			? (document.getElementById('name').innerHTML = 'User Name')
+			: (document.getElementById('name').innerHTML = userData.name);
 
 	//handle
-	let handle = (userData.login == null ? document.getElementById('handle').innerHTML = '@handle' : document.getElementById('handle').innerHTML = userData.login);
+	let handle =
+		userData.login == null
+			? (document.getElementById('handle').innerHTML = '@handle')
+			: (document.getElementById('handle').innerHTML = userData.login);
 
-	let handleLink = (userData.html_url == null ? document.getElementById('handle').href = '#' : document.getElementById('handle').href = userData.html_url);
+	let handleLink =
+		userData.html_url == null
+			? (document.getElementById('handle').href = '#')
+			: (document.getElementById('handle').href = userData.html_url);
 
 	//date joined
 	let joinDate = new Date(userData.created_at).toDateString();
-	let date = (userData.created_at == null ? document.getElementById('date').innerHTML = 'Date Joined ' : document.getElementById('date').innerHTML = `Joined ${joinDate}`);
+	let date =
+		userData.created_at == null
+			? (document.getElementById('date').innerHTML = 'Date Joined ')
+			: (document.getElementById('date').innerHTML = `Joined ${joinDate}`);
 
 	//public repos
-	let repos = (userData.public_repos == null ? document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> 0` : document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}` );
+	let repos =
+		userData.public_repos == null
+			? (document.getElementById('repos').innerHTML = `<p class="statistics__title">Repos</p> 0`)
+			: (document.getElementById(
+					'repos'
+				).innerHTML = `<p class="statistics__title">Repos</p> ${userData.public_repos}`);
 
 	//followers
-	let followers = (userData.followers == null ? document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> 0` : document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`);
+	let followers =
+		userData.followers == null
+			? (document.getElementById('followers').innerHTML = `<p class="statistics__title">Followers</p> 0`)
+			: (document.getElementById(
+					'followers'
+				).innerHTML = `<p class="statistics__title">Followers</p> ${userData.followers}`);
 
 	//following
-	let following = (userData.following == null ? document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> 0` : document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`);
+	let following =
+		userData.following == null
+			? (document.getElementById('following').innerHTML = `<p class="statistics__title">Following</p> 0`)
+			: (document.getElementById(
+					'following'
+				).innerHTML = `<p class="statistics__title">Following</p> ${userData.following}`);
 
 	//location
-	let location = (document.getElementById('location').innerHTML = userData.location == null ? 'Location Unknown' : document.getElementById('location').innerHTML = userData.location);
+	let location = (document.getElementById('location').innerHTML =
+		userData.location == null
+			? 'Location Unknown'
+			: (document.getElementById('location').innerHTML = userData.location));
 
 	//blog
-	let blog = (userData.blog == null ? document.getElementById('blog').innerHTML = 'Not Available' : document.getElementById('blog').innerHTML = userData.blog);
+	let blog =
+		userData.blog == null
+			? (document.getElementById('blog').innerHTML = 'Not Available')
+			: (document.getElementById('blog').innerHTML = userData.blog);
 
-	let blogLink = (userData.blog == null ? document.getElementById('blog-link').href = '#' : document.getElementById('blog-link').href = userData.blog);
-	console.log(blogLink)
+	let blogLink =
+		userData.blog == null
+			? (document.getElementById('blog-link').href = '#')
+			: (document.getElementById('blog-link').href = userData.blog);
+	console.log(blogLink);
 	//bio
-	let bio = (userData.bio == null ? document.getElementById('bio').innerHTML = 'Bio' : document.getElementById('bio').innerHTML = userData.bio);
+	let bio =
+		userData.bio == null
+			? (document.getElementById('bio').innerHTML = 'Bio')
+			: (document.getElementById('bio').innerHTML = userData.bio);
 
 	//twitter
-	let twitter = (userData.twitter_username == null ? document.getElementById('twitter').innerHTML = 'Not Available' : document.getElementById('twitter').innerHTML = userData.twitter_username);
+	let twitter =
+		userData.twitter_username == null
+			? (document.getElementById('twitter').innerHTML = 'Not Available')
+			: (document.getElementById('twitter').innerHTML = userData.twitter_username);
 	//company
-	let company = (userData.company == null ? document.getElementById('company').innerHTML = 'Not Available' : document.getElementById('company').innerHTML = userData.company);
+	let company =
+		userData.company == null
+			? (document.getElementById('company').innerHTML = 'Not Available')
+			: (document.getElementById('company').innerHTML = userData.company);
 
 	// let companyLink = (userData.company == null || !userData.company.includes('.com', '.org', '.io', '.net') ? document.getElementById('company-link').href = '#' : document.getElementById('company-link').href = userData.company);
 
 	//avatar
-	let avatar =(document.getElementById('avatar').src = userData.avatar_url == null ? document.getElementById('avatar').src = `./assets/avatar.jpeg` : document.getElementById('avatar').src = userData.avatar_url);
+	let avatar = (document.getElementById('avatar').src =
+		userData.avatar_url == null
+			? (document.getElementById('avatar').src = `./assets/avatar.jpeg`)
+			: (document.getElementById('avatar').src = userData.avatar_url));
 }
 
-
-let inputValue = document.getElementById('search').value;
 getUser();
 
 // LightMode / DarkMode

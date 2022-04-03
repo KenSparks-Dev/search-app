@@ -10,6 +10,15 @@
 	margin: 0 auto;
 	max-width: 700px;
 }
+
+.full-screen-avatar {
+	display: none;
+}
+
+.bio-section-avatar__text-full-screen {
+	display: none;
+}
+
 .header {
 	margin-top: 40px;
 	display: flex;
@@ -39,7 +48,7 @@
 .search-section {
 	margin-top: 30px;
 	display: grid;
-	grid-template-columns: 35px 2fr 1fr;
+	grid-template-columns: 35px 4fr 1fr;
 	background: $midnight-express;
 	padding: 10px 10px;
 	border-radius: 10px;
@@ -75,9 +84,10 @@
 		background: $dodger-blue;
 		color: $white;
 		border: none;
-		padding: 15px 0;
+		padding: 15px 10px;
 		border-radius: 10px;
 		font-size: 18px;
+		max-width: 90px;
 	}
 }
 
@@ -126,7 +136,6 @@
 	justify-content: space-between;
 	padding: 20px;
 	border-radius: 10px;
-	text-align: center;
 	&__title {
 		@include body-reg;
 		font-weight: 400;
@@ -139,9 +148,100 @@
 
 .contact-section {
 	margin-top: 20px;
-	&__list {
-	}
+
 	&__list-item {
 		padding-top: 15px;
+	}
+}
+
+@media (min-width: 768px) {
+	.search-app {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		margin-top: 40px;
+		max-width: 800px;
+	}
+	.search-section {
+		grid-template-columns: 65px 6fr 1fr;
+	}
+	.user {
+		padding: 35px;
+	}
+	.content-section {
+		width: 95%;
+	}
+
+	.bio-section-avatar {
+		&__img {
+			width: 150px;
+			height: 150px;
+		}
+		&__text {
+			padding-top: 20px;
+			padding-left: 40px;
+		}
+		&__text-name {
+			@include h1;
+		}
+		&__text-date {
+			@include h3;
+		}
+		&__text-handle {
+			@include h3;
+		}
+	}
+
+	.contact-section__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 75px);
+	}
+}
+
+@media (min-width: 1024px) {
+	.search-app {
+		max-width: 700px;
+	}
+	.search-section {
+		grid-template-columns: 65px 6fr 1fr;
+	}
+	.user {
+		background: $midnight-express;
+		margin: 25px 0 60px 0;
+		padding: 40px 20px;
+		border-radius: 10px;
+		display: grid;
+		grid-template-columns: 220px 1fr;
+	}
+	.content-section {
+		width: 95%;
+	}
+	.full-screen-avatar {
+		display: block;
+		margin: 0 20px;
+	}
+
+	.bio-section-avatar {
+		display: none;
+	}
+	.bio-section-avatar__text-full-screen {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.contact-section__list {
+		grid-template-rows: repeat(2, 45px);
+	}
+	.statistics {
+		margin-top: 40px;
+		justify-content: flex-start;
+		.statistics__title {
+			padding: 0px;
+		}
+		p {
+			padding: 0 30px;
+		}
 	}
 }
