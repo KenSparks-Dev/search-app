@@ -187,6 +187,12 @@ input[type=search]::-webkit-search-results-decoration {
 .contact-section__list-item {
   padding-top: 15px;
 }
+.contact-section .location,
+.contact-section .blog,
+.contact-section .twitter,
+.contact-section .company {
+  word-break: break-all;
+}
 
 @media (min-width: 768px) {
   .search-app {
@@ -242,7 +248,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 @media (min-width: 1024px) {
   .search-app {
-    max-width: 800px;
+    max-width: 700px;
   }
 
   .search-section {
@@ -259,7 +265,7 @@ input[type=search]::-webkit-search-results-decoration {
   }
 
   .content-section {
-    width: 95%;
+    width: 97%;
   }
 
   .full-screen-avatar {
@@ -278,7 +284,7 @@ input[type=search]::-webkit-search-results-decoration {
   }
 
   .contact-section__list {
-    grid-template-rows: repeat(2, 45px);
+    grid-template-rows: repeat(2, 65px);
   }
 
   .statistics {
@@ -290,6 +296,11 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .statistics p {
     padding: 0 30px;
+  }
+}
+@media (min-width: 1400px) {
+  .bio-section-avatar__text-full-screen {
+    grid-gap: 14px;
   }
 }
 
