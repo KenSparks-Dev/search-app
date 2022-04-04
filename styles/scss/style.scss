@@ -129,6 +129,7 @@
 	}
 }
 
+//statistics
 .statistics {
 	background: #141d2f;
 	margin-top: 20px;
@@ -146,6 +147,7 @@
 	font-weight: bold;
 }
 
+//contact section
 .contact-section {
 	margin-top: 20px;
 
@@ -161,6 +163,7 @@
 	}
 }
 
+//tablet
 @media (min-width: 768px) {
 	.search-app {
 		width: 80%;
@@ -207,6 +210,7 @@
 	}
 }
 
+//full screen
 @media (min-width: 1024px) {
 	.search-app {
 		max-width: 700px;
@@ -254,6 +258,7 @@
 	}
 }
 
+//xl screen
 @media (min-width: 1400px) {
 	.bio-section-avatar__text-full-screen {
 		grid-gap: 14px;
