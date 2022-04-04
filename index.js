@@ -118,6 +118,15 @@ async function getUser(userName) {
 
 getUser();
 
+//click enter to submit
+const enterToSubmit = document.getElementById('search');
+
+enterToSubmit.addEventListener('keyup', (e) => {
+	if(e.keyCode === 13){
+		return getUser(document.getElementById('search').value)
+	}
+})
+
 // LightMode / DarkMode
 
 //General Colors
